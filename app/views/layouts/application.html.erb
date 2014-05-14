@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <title>Rados - Your best fishing-boat shop! </title>
+
+  <!-- <label id="code.slt"/> --><%= stylesheet_link_tag    "application", media: "all",
+
+    "data-turbolinks-track" => true %>
+<!--     <%= stylesheet_link_tag    "scaffold" %>
+ -->
+    <%= javascript_include_tag "application" %>  <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
+</head>
+<body class="<%= controller.controller_name %>">
+
+  <div id="banner">
+
+    <%= image_tag("logo.jpg") %>
+
+    <%= @page_title || "Rados fishing-boat shop" %><!-- <label id="code.depot.e.title"/> -->
+
+  </div>
+
+  <div id="columns">
+
+    <div id="side">
+      <!-- START:hidden_div -->
+      <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart %>
+        <% end %>
+      <% end %>
+    <!-- END:hidden_div -->      <ul>
+
+        <li><a href="http://www....">Home</a></li>
+
+        <li><a href="http://www..../faq">Questions</a></li>
+
+        <li><a href="http://www..../news">News</a></li>
+
+        <li><a href="http://www..../contact">Contact</a></li>
+
+        <span><%= Time.now %></span>
+
+        <span>You've been here <%= pluralize session[:counter], 'time' %></span>
+
+      </ul>
+
+      <% if session[:user_id] %>
+      <br/>
+
+      <%= link_to 'Orders',   orders_path %><br/>
+      <%= link_to 'Products', products_path %><br/>
+      <%= link_to 'Users',    users_path %><br/>
+      <br/>
+
+    <%= button_to 'Logout', logout_path, :method => :delete %> 
+
+    <% end %>
+
+    </div>
+
+    <div id="main">
+
+      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+
+    </div>
+
+  </div>
+</body>
+</html>

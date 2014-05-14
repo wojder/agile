@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyStringggggggggg
+  description: MyText
+  image_url: MyString
+  price: 3000
+
+two:
+  title: MyStringgggggg
+  description: MyText
+  image_url: MyString
+  price: 3000
+#START:ruby
+
+ruby: 
+  title: Boat Rados 290
+  description: 
+    The best boat for lake fishing. Excellent built, great color pattern helps U to catch the biggest fish all over your haunting area. 
+  price:       3000
+  image_url:   lodka1.jpg 
+#END:ruby
