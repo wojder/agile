@@ -10,6 +10,6 @@
   </tr>
 
 </table>
-<%= button_to "Checkout", new_order_url, :method=>:get%>
-<%= button_to 'Empty Cart', cart, :method => :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to t('.checkout'), new_order_url, :method=>:get %>
+<%= button_to t('.empty'), cart, :method => :delete, data: { confirm: 'Are you sure?' } %>
 
